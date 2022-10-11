@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ClubbController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:/Users/hp/symfony5/src/Controller/ClubbController.php'|file_link(0) }}">src/Controller/ClubbController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:/Users/hp/symfony5/templates/clubb/index.html.twig'|file_link(0) }}">templates/clubb/index.html.twig</a></code></li>
+    </ul>
+</div>
+
+<h1>Hello {{ controller_name }}! ✅</h1>
+<img src="{{asset('DSC_0005.JPG')}}"alt="" width="20%"> 
+
+<table border="1" width='50%'>
+{%for p in clubs %}
+
+
+<tr align="center">
+ <td> {{p.name}} </td> 
+ <td> {{p.inscriptionDate}} </td> 
+ <td> {{p.openSpots}} </td> 
+
+ </tr> 
+ 
+{% endfor %}
+
+
+
+</table>
+<h2> openSpots > 0 </h2>
+<table border="1" width='50%'>
+{%for p in clubs %}
+
+<tr align="center">
+
+{% if p.openSpots>0 %}
+ <td> {{p.name}} </td> 
+ <td> {{p.inscriptionDate}} </td> 
+ <td> {{p.openSpots}} </td> 
+
+ </tr> 
+ {% endif %}
+{% endfor %}
+<hr>
+</table>
+{% endblock %}

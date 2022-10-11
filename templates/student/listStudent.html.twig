@@ -1,0 +1,29 @@
+<table border="3width ='50%'">
+<tr>
+<th>Num</th>
+<th>Nom</th>
+<th>Prenom</th>
+<th>Date</th>
+</tr>
+
+{% for s in students %}
+<tr align="center">
+<tr>
+ <td>
+{{s.num}}
+</td>
+    <td>
+{{s.nom}}
+</td>
+    <td>
+{{s.prenom}}
+</td>
+    <td>
+{{s.date|date('d-m-Y')}}
+</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{#}<br> <a href="{{path('studentDetails',{num: s.num})}}"{#}
