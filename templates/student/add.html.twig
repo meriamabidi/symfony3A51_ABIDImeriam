@@ -1,0 +1,13 @@
+<h1>
+  Add Student !! ✅
+</h1>
+{{ form(form) }}
+
+{#}{% block body %}
+  {{ form_start(form) }}
+
+  {{ form_widget(form) }}
+  <button type="submit" class="btn btn-success">Add</button>
+
+  {{ form_end(form) }}
+{% endblock %}{#}

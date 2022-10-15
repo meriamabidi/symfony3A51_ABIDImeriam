@@ -21,9 +21,22 @@
     <td>
 {{s.date|date('d-m-Y')}}
 </td>
+
 </tr>
 {% endfor %}
 
 </table>
 
-{#}<br> <a href="{{path('studentDetails',{num: s.num})}}"{#}
+<br>
+
+{% for s in students %}
+{{s.prenom}}
+{{s.nom}}
+{#}il lien maye5dmch njmch nclicky 3la il details or delete !!!!!{#}
+<a  herf="{{ path('studentDetails',{num: s.num}) }}"> -Details
+</a>
+
+<a herf="{{ path('studentDelete',{num: s.num}) }}"> -Delete
+</a>
+<br>
+{% endfor %}
